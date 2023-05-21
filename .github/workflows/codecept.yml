@@ -28,9 +28,9 @@ jobs:
       #     path: output/
       #     retention-days: 30
       
-      - uses: actions/upload-release-asset@v1
-        if: always()
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          asset_path: output/mochawesome.html
-          asset_name: mochawesome.html
-          asset_content_type: text/html
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: main
+          publish_dir: output/mochawesome.html
