@@ -34,4 +34,3 @@ jobs:
           asset_path: output/mochawesome.html
           asset_name: mochawesome.html
           asset_content_type: text/html
-          retention-days: 30
