@@ -21,9 +21,17 @@ jobs:
       - name: Run E2E tests
         run: npm run test:ct
         
-      - uses: actions/upload-artifact@v3
+      # - uses: actions/upload-release-asset@v1
+      #   if: always()
+      #   with:
+      #     name: codecept-report
+      #     path: output/
+      #     retention-days: 30
+      
+      - uses: actions/upload-release-asset@v1
         if: always()
         with:
-          name: codecept-report
-          path: output/
+          asset_path: output/mochawesome.html
+          asset_name: mochawesome.html
+          asset_content_type: text/html
           retention-days: 30
